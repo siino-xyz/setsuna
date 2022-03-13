@@ -4,3 +4,6 @@ export const client = createClient({
   serviceDomain: 'kp822wg687',
   apiKey: process.env.API_KEY,
 });
+
+
+
