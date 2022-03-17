@@ -1,57 +1,47 @@
- import Link from 'next/link'
- import { client } from '../libs/client'
- import  FormButton from '../components/ui-parts/FormButton'
- import Header from '../components/ui-parts/Header'
-import { Typography } from '@mui/material'
+import { client } from '../libs/client'
+import type { Setsunaposts } from '../types/setsunaposts'
+import Link from 'next/link'
+// import Moment from 'react-moment'
 
-const Home = ({ blog }) => {
+type Props = {
+  setsunaposts: Array<Setsunaposts>
+}
+
+export default function Index({ setsunaposts }: Props ) {
   return (
     <>
-     <Header home/>
-      <div>
-        <ul>
-          {blog.map((blog) =>(
-            <li key={blog.id}>
-              <Link href={`/blog/${blog.id}`}>
-                <a>{blog.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Typography variant="h1">
-          行方不明Yukuefumei
-        </Typography>
-        <Typography variant="h2">
-          行方不明Yukuefumei
-        </Typography>
-        <Typography variant="h3">
-          行方不明Yukuefumei
-        </Typography>
-        <Typography variant="h4">
-          行方不明Yukuefumei
-        </Typography>
-        <Typography variant="subtitle1">
-          行方不明Yukuefumei
-        </Typography>
-        <Typography variant="body1">
-          行方不明Yukuefumei
-        </Typography>
-        
+    {/* 記事カードcontainer */}
+      <div> 
+        {setsunaposts.map(setsunaposts => (
+        <Link href={`/posts/${setsunaposts.id}`}>
+          <div key={setsunaposts.id}>
+            <img 
+              src={setsunaposts.eye_catch.url} 
+              alt="Yo." 
+            />
+            <div>{setsunaposts.title}</div>
+
+            {/* <Moment format="YYYY/MM/DD">
+              {setsunaposts.publishedAt}
+            </Moment> */}
+
+            <div>
+              {setsunaposts.categories.categories}
+            </div>
+          </div>
+        </Link> 
+        ))}
       </div>
-      <FormButton />
     </>
   )
 }
 
-export const getStaticProps = async() => {
-  const data = await client.get({endpoint: "blog"})
+export const getStaticProps  = async () => {
+  const data = await client.get({ endpoint: 'setsunaposts'})
 
   return {
     props: {
-      blog: data.contents
+      setsunaposts: data.contents,
     }
   }
 }
-
-export default Home
-

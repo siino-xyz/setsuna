@@ -5,8 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 
 const Header = ({ home }) => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{flexGrow: 1,}}>
+      <AppBar position="static" color="secondary">
         { home ? (
         <Toolbar>
          <img 
