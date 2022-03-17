@@ -20,6 +20,11 @@ const Setsunaposts =({ setsunaposts }: Props) => {
          <Moment format="YYYY/MM/DD">
             {setsunaposts.publishedAt}
          </Moment>
+         <div 
+          dangerouslySetInnerHTML={{
+          __html: `${setsunaposts.body}`,
+          }}
+          />
          <div>
             {setsunaposts.categories.categories}
           </div>
