@@ -1,12 +1,13 @@
-import { client } from '../../libs/client'
-import { Setsunaposts } from '../../types/setsunaposts'
 import Moment from 'react-moment'
+import { Setsunaposts } from '../../types/setsunaposts'
+import { client } from '../../libs/client'
+
 
 type Props = {
   setsunaposts: Setsunaposts
 }
 
-export default function Setsunaposts({setsunaposts}: Props) {
+const Setsunaposts =({ setsunaposts }: Props) => {
   return (
     <div>
       <div>
@@ -20,14 +21,16 @@ export default function Setsunaposts({setsunaposts}: Props) {
             {setsunaposts.publishedAt}
          </Moment>
          <div>
-              {setsunaposts.categories.categories}
-            </div>
+            {setsunaposts.categories.categories}
+          </div>
       </div>
     </div>
   )
 }
 
-// 静的生成のためのパスを指定します
+export default Setsunaposts
+
+//静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "setsunaposts" });
 
@@ -37,7 +40,7 @@ export const getStaticPaths = async () => {
 
 
 
-export const getStaticProps =async(context) => {
+export const getStaticProps = async( context) => {
   const id = context.params.id;
   const data = await client.get({endpoint: "setsunaposts", contentId: id});
 
@@ -47,3 +50,5 @@ export const getStaticProps =async(context) => {
     }
   }
 }
+
+
