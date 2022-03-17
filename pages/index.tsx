@@ -23,41 +23,41 @@ const Index = ({ setsunaposts }: Props ) => {
   return (
   <>
     <Box sx={{ flexGrow: 1 }}>
-    <Grid container spacing={2}>
-      {setsunaposts.map(setsunaposts => (
-      <Grid item xs={3}>
-      <Link href={`/setsunaposts/${setsunaposts.id}`}>     
-        <Card sx={{ 
-          maxWidth: 310,
-          backgroundColor: '#333333'
-        }} key={setsunaposts.id}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image={setsunaposts.eye_catch.url} 
-              alt="Yo." 
-            />
-            <CardContent>
-              <Typography variant="h4" component="div">
-                {setsunaposts.title}
-              </Typography>
+      <Grid container spacing={2}>
+        {setsunaposts.map(setsunaposts => (
+        <Link href={`/setsunaposts/${setsunaposts.id}`} key={setsunaposts.id}>     
+        <Grid item xs={3}>
+          <Card sx={{ 
+            maxWidth: 310,
+            backgroundColor: '#333333'
+          }} >
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image={setsunaposts.eye_catch.url} 
+                alt="Yo." 
+              />
+              <CardContent>
+                <Typography variant="h4" component="div">
+                  {setsunaposts.title}
+                </Typography>
 
-              <Moment format="YYYY/MM/DD">
-                {setsunaposts.publishedAt}
-              </Moment>
+                <Moment format="YYYY/MM/DD">
+                  {setsunaposts.publishedAt}
+                </Moment>
 
-              <div>
-                {setsunaposts.categories.categories}
-              </div>
-              
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Link>
+                <div>
+                  {setsunaposts.categories.categories}
+                </div>
+                
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        </Link>
+        ))}
       </Grid>
-      ))}
-    </Grid>
     </Box>
   </>
   )

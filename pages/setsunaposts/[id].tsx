@@ -1,6 +1,7 @@
 import Moment from 'react-moment'
 import { Setsunaposts } from '../../types/setsunaposts'
 import { client } from '../../libs/client'
+import Image from 'next/image'
 
 
 type Props = {
@@ -11,9 +12,7 @@ const Setsunaposts =({ setsunaposts }: Props) => {
   return (
     <div>
       <div>
-        <img 
-          src={setsunaposts.eye_catch.url} 
-         />
+ 
          <div>
            {setsunaposts.title}
          </div>
