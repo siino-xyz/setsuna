@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Box, { BoxProps } from '@mui/material/Box';
 
-function Item(props: BoxProps) {
+const Item = (props: BoxProps) => {
   const { sx, ...other} = props;
   return (
     <Box 

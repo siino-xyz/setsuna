@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import SectionTitle from '../components/SectionTitle'
 import ServiceContent from '../components/ServiceContent'
+import FullWidthText from '../components/FullWidthText'
 
 //mui-components
 import { CardActionArea } from '@mui/material';
@@ -73,6 +74,13 @@ const Index = ({ setsunaposts }: Props ) => {
       sectiontitle={'高速でセキュアなウェブサイトをつくります'}
     />
     <ServiceContent />
+    <SectionTitle
+      sectiontitle={'jamstackとは？'}
+    />
+    <FullWidthText />
+    <SectionTitle
+      sectiontitle={'jamstackのメリット'}
+    />
   </Layout>
   </>
   )
