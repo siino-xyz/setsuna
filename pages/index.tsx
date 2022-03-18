@@ -9,6 +9,7 @@ import SectionTitle from '../components/SectionTitle'
 import ServiceContent from '../components/ServiceContent'
 import FullWidthText from '../components/FullWidthText'
 import MelitBoxes from '../components/MelitBoxes'
+import About from '../components/About'
 
 //mui-components
 import { CardActionArea } from '@mui/material';
@@ -84,6 +85,11 @@ const Index = ({ setsunaposts }: Props ) => {
     />
 
     <MelitBoxes />
+
+    <SectionTitle
+      sectiontitle={'自己紹介'}
+    />
+    <About />
   </Layout>
   </>
   )

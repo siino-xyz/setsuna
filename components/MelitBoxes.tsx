@@ -21,7 +21,7 @@ const Item = (props: BoxProps) => {
 }
 
 
-function TypoItem(props: TypographyProps) {
+const TypoItem = (props: TypographyProps) => {
   const { sx , ...other } = props;
   return (
     <Typography 
