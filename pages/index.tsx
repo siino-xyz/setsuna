@@ -10,6 +10,7 @@ import ServiceContent from '../components/ServiceContent'
 import FullWidthText from '../components/FullWidthText'
 import MelitBoxes from '../components/MelitBoxes'
 import About from '../components/About'
+import Footer from '../components/Footer'
 
 //mui-components
 import { CardActionArea } from '@mui/material';
@@ -91,6 +92,7 @@ const Index = ({ setsunaposts }: Props ) => {
     />
     <About />
   </Layout>
+  <Footer />
   </>
   )
 }
