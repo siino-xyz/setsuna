@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import SectionTitle from '../components/SectionTitle'
 import ServiceContent from '../components/ServiceContent'
 import FullWidthText from '../components/FullWidthText'
+import MelitBoxes from '../components/MelitBoxes'
 
 //mui-components
 import { CardActionArea } from '@mui/material';
@@ -81,6 +82,8 @@ const Index = ({ setsunaposts }: Props ) => {
     <SectionTitle
       sectiontitle={'jamstackのメリット'}
     />
+
+    <MelitBoxes />
   </Layout>
   </>
   )
