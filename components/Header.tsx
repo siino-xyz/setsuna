@@ -44,10 +44,10 @@ const Header = () => {
             }}
           >
             <Item>
-              <Image src="/icons/twitter-logo.svg" width={35} height={35}/>
+              <Image src="/icons/twitter-logo.svg" width={35} height={35} alt="twitter-logo"/>
             </Item>
             <Item>
-              <Image src="/icons/contact-icon.svg" width={35} height={35}/>
+              <Image src="/icons/contact-icon.svg" width={35} height={35} alt="email-icon"/>
             </Item>
           </Box>
         </Box>

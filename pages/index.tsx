@@ -33,12 +33,12 @@ const Index = ({ setsunaposts }: Props ) => {
       my: 0
     }}>
       {setsunaposts.map(setsunaposts => (
-      <Box  >
+      <Box key={setsunaposts.id} >
       <Link href={`/setsunaposts/${setsunaposts.id}`}>     
         <Card sx={{ 
           maxWidth: 310,
           backgroundColor: '#333333'
-        }} key={setsunaposts.id}>
+        }}>
           <CardActionArea>
             <CardMedia
               component="img"
