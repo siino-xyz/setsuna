@@ -5,6 +5,7 @@ import Moment from 'react-moment'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
+import SectionTitle from '../components/SectionTitle'
 
 //mui-components
 import { CardActionArea } from '@mui/material';
@@ -66,12 +67,17 @@ const Index = ({ setsunaposts }: Props ) => {
       </Box>
       ))}
     </Box>
+
+    <SectionTitle
+      sectiontitle={'高速でセキュアなウェブサイトをつくります'}
+    />
   </Layout>
   </>
   )
 }
 
 export default Index
+
 export const getStaticProps  = async () => {
   const data = await client.get({ endpoint: 'setsunaposts'})
 
