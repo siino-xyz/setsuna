@@ -31,7 +31,7 @@ const Header = () => {
           flexDirection: 'row',
           justifyContent: 'space-between'
         }}>
-         <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63}/>
+         <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63} alt='setsuna-logo'/>
          <Box
             sx={{
               display: 'flex',
