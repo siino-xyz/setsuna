@@ -3,29 +3,37 @@ import type { Setsunaposts } from '../types/setsunaposts'
 import Link from 'next/link'
 import Moment from 'react-moment'
 
-// 記事カード
+import Header from '../components/Header'
+import Layout from '../components/Layout'
+
+//mui-components
 import { CardActionArea } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-
-// 記事カード GridLayout
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+
 
 type Props = {
   setsunaposts: Array<Setsunaposts>
 }
 
+
 const Index = ({ setsunaposts }: Props ) => {
   return (
   <>
-    <Box sx={{ flexGrow: 1 }}>
-    <Grid container spacing={2}>
+  <Header />
+  <Layout index>
+    <Box sx={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+      mx: 'auto',
+      my: 0
+    }}>
       {setsunaposts.map(setsunaposts => (
-      <Grid item xs={3}>
+      <Box  >
       <Link href={`/setsunaposts/${setsunaposts.id}`}>     
         <Card sx={{ 
           maxWidth: 310,
@@ -55,16 +63,15 @@ const Index = ({ setsunaposts }: Props ) => {
           </CardActionArea>
         </Card>
       </Link>
-      </Grid>
+      </Box>
       ))}
-    </Grid>
     </Box>
+  </Layout>
   </>
   )
 }
 
 export default Index
-
 export const getStaticProps  = async () => {
   const data = await client.get({ endpoint: 'setsunaposts'})
 
