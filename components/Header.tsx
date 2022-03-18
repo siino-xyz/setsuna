@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Box, { BoxProps } from '@mui/material/Box';
 
-function Item(props: BoxProps) {
+const Item = (props: BoxProps) => {
   const { sx, ...other} = props;
   return (
     <Box 
@@ -31,7 +31,7 @@ const Header = () => {
           flexDirection: 'row',
           justifyContent: 'space-between'
         }}>
-         <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63}/>
+         <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63} alt='setsuna-logo'/>
          <Box
             sx={{
               display: 'flex',

@@ -6,6 +6,11 @@ import Moment from 'react-moment'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import SectionTitle from '../components/SectionTitle'
+import ServiceContent from '../components/ServiceContent'
+import FullWidthText from '../components/FullWidthText'
+import MelitBoxes from '../components/MelitBoxes'
+import About from '../components/About'
+import Footer from '../components/Footer'
 
 //mui-components
 import { CardActionArea } from '@mui/material';
@@ -35,7 +40,7 @@ const Index = ({ setsunaposts }: Props ) => {
     }}>
       {setsunaposts.map(setsunaposts => (
       <Box key={setsunaposts.id} >
-      <Link href={`/setsunaposts/${setsunaposts.id}`}>     
+      <Link href={`/setsunaposts/${setsunaposts.id}`} passHref>     
         <Card sx={{ 
           maxWidth: 310,
           backgroundColor: '#333333'
@@ -71,7 +76,23 @@ const Index = ({ setsunaposts }: Props ) => {
     <SectionTitle
       sectiontitle={'高速でセキュアなウェブサイトをつくります'}
     />
+    <ServiceContent />
+    <SectionTitle
+      sectiontitle={'jamstackとは？'}
+    />
+    <FullWidthText />
+    <SectionTitle
+      sectiontitle={'jamstackのメリット'}
+    />
+
+    <MelitBoxes />
+
+    <SectionTitle
+      sectiontitle={'自己紹介'}
+    />
+    <About />
   </Layout>
+  <Footer />
   </>
   )
 }

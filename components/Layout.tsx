@@ -4,7 +4,8 @@ const Layout = ({children, index}) => {
   return (
     <>  
     <Box sx={{
-      maxWidth: 1000,
+      maxWidth: 1100,
+      width: '85%',
       mx: 'auto',
       my: 0,
     }}>
