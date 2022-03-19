@@ -29,7 +29,7 @@ type Props = {
 const Index = ({ setsunaposts }: Props ) => {
   return (
   <>
-  <Header />
+  <Header index />
   <Layout index>
     <Box sx={{
       display: 'flex',

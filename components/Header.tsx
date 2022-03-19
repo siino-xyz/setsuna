@@ -18,44 +18,85 @@ const Item = (props: BoxProps) => {
   )
 }
 
-const Header = () => {
+const Header = ({index}) => {
+  console.log(index)
   return (
-    <Box sx={{ 
-      flexGrow: 1,      
-    }}>
-      <AppBar position="static" sx={{ 
-        backgroundColor: 'background.default'
-      }}>
-        <Box sx= {{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between'
+    <>
+      {index ? (
+        <Box sx={{ 
+          flexGrow: 1,      
         }}>
-         <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63} alt='setsuna-logo'/>
-         <Box
-            sx={{
+          <AppBar position="static" sx={{ 
+            backgroundColor: 'background.default'
+          }}>
+            <Box sx= {{
               display: 'flex',
               flexDirection: 'row',
-              pr: 0.1,
-              pl: 0.1,
-              m: 1,
-              bgcolor: 'secoundary.main',
-              borderRadius: 1,
-            }}
-          >
-            <Item>
-              <Image src="/icons/twitter-logo.svg" width={35} height={35} alt="twitter-logo"/>
-            </Item>
-            <Item>
-              <Image src="/icons/contact-icon.svg" width={35} height={35} alt="email-icon"/>
-            </Item>
-          </Box>
+              justifyContent: 'space-between'
+            }}>
+            <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63} alt='setsuna-logo'/>
+            <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  pr: 0.1,
+                  pl: 0.1,
+                  m: 1,
+                  bgcolor: 'secoundary.main',
+                  borderRadius: 1,
+                }}
+              >
+                <Item>
+                  <Image src="/icons/twitter-logo.svg" width={35} height={35} alt="twitter-logo"/>
+                </Item>
+                <Item>
+                  <Image src="/icons/contact-icon.svg" width={35} height={35} alt="email-icon"/>
+                </Item>
+              </Box>
+            </Box>
+          </AppBar>
         </Box>
-      </AppBar>
-    </Box>
-  );
+      ) : (
+        <Box sx={{ 
+          flexGrow: 1,      
+        }}>
+          <AppBar position="static" sx={{ 
+            backgroundColor: 'background.default'
+          }}>
+            <Box sx= {{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between'
+            }}>
+            <Image src="/logo/setsuna-logo-blog.svg" width={192} height={63} alt='setsuna-logo-blog'/>
+            <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  pr: 0.1,
+                  pl: 0.1,
+                  m: 1,
+                  bgcolor: 'secoundary.main',
+                  borderRadius: 1,
+                }}
+              >
+                <Item>
+                  <Image src="/icons/twitter-logo.svg" width={35} height={35} alt="twitter-logo"/>
+                </Item>
+                <Item>
+                  <Image src="/icons/contact-icon.svg" width={35} height={35} alt="email-icon"/>
+                </Item>
+              </Box>
+            </Box>
+          </AppBar>
+        </Box>
+      )}
+    </>
+  )
 }
 
+
+Header.defaultProps = { description: "説明はありません" };
 export default Header
 
 

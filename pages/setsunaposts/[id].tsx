@@ -1,7 +1,11 @@
 import Moment from 'react-moment'
 import { Setsunaposts } from '../../types/setsunaposts'
 import { client } from '../../libs/client'
+import Layout from '../../components/Layout'
+
+
 // import Image from 'next/image'
+import Header from '../../components/Header'
 
 type Props = {
   setsunaposts: Setsunaposts
@@ -9,30 +13,37 @@ type Props = {
 
 const Setsunaposts =({ setsunaposts }: Props) => {
   return (
-    <div>
-      <div>
-        {/* <Image 
-          image={setsunaposts.eye_catch.url}
-          width={900}
-          height={300}
-          alt="eye_catch"
-         /> */}
-         <div>
-           {setsunaposts.title}
-         </div>
-         <Moment format="YYYY/MM/DD">
-            {setsunaposts.publishedAt}
-         </Moment>
-         <div 
-          dangerouslySetInnerHTML={{
-          __html: `${setsunaposts.body}`,
-          }}
-          />
-         <div>
-            {setsunaposts.categories.categories}
+    <>
+      console.log(index)
+
+    <Header />
+    <Layout index>
+        <div>
+          <div>
+            {/* <Image 
+              image={setsunaposts.eye_catch.url}
+              width={900}
+              height={300}
+              alt="eye_catch"
+            /> */}
+            <div>
+              {setsunaposts.title}
+            </div>
+            <Moment format="YYYY/MM/DD">
+                {setsunaposts.publishedAt}
+            </Moment>
+            <div 
+              dangerouslySetInnerHTML={{
+              __html: `${setsunaposts.body}`,
+              }}
+              />
+            <div>
+                {setsunaposts.categories.categories}
+              </div>
           </div>
-      </div>
-    </div>
+        </div>
+      </Layout>
+    </>
   )
 }
 
