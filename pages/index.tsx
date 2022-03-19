@@ -25,12 +25,8 @@ type Props = {
   setsunaposts: Array<Setsunaposts>
 }
 
-
-const Index = ({ setsunaposts }: Props ) => {
+const GetArticles = ({ setsunaposts }: Props ) => {
   return (
-  <>
-  <Header />
-  <Layout index>
     <Box sx={{
       display: 'flex',
       justifyContent: 'space-between',
@@ -39,39 +35,90 @@ const Index = ({ setsunaposts }: Props ) => {
       my: 0
     }}>
       {setsunaposts.map(setsunaposts => (
-      <Box key={setsunaposts.id} >
-      <Link href={`/setsunaposts/${setsunaposts.id}`} passHref>     
+      <Box key={setsunaposts.id} sx={{
+        width: '95%',
+        maxWidth: 310,
+        mx: 1
+      }}>
+         
         <Card sx={{ 
-          maxWidth: 310,
-          backgroundColor: '#333333'
+          width: '100%',
+          backgroundColor: '#333333',
+          borderRadius: 0.7,
         }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image={setsunaposts.eye_catch.url} 
-              alt="Yo." 
-            />
-            <CardContent>
-              <Typography variant="h4" component="div">
-                {setsunaposts.title}
+          <CardActionArea sx={{
+            
+            cursor: 'inherit',
+          }}>
+            <Link href={`/setsunaposts/${setsunaposts.id}`} passHref>  
+              <CardMedia
+                component="img"
+                height="155"
+                image={setsunaposts.eye_catch.url} 
+                alt="Yo."
+
+                sx={{
+                  cursor: 'pointer',
+                }}
+              />
+            </Link>
+
+            <CardContent sx={{
+              px: 1,
+              py: 0.8,
+              backgroundColor: 'common.white'
+            }}>
+              
+
+              <Typography variant="subtitle2" component="span" sx={{
+                backgroundColor: 'common.black',
+                color: 'common.white',
+                px: 1,
+                pt: 0,
+                pb: 0.2,
+                borderRadius: 0.7,
+               }}>
+                {setsunaposts.categories.categories}   
               </Typography>
 
-              <Moment format="YYYY/MM/DD">
-                {setsunaposts.publishedAt}
-              </Moment>
+              <Link href={`/setsunaposts/${setsunaposts.id}`} passHref>  
+                <Typography variant="subtitle1" component="h1" sx={{
+                  color: 'common.black',
+                  lineHeight: '2.2rem',
+                  cursor: 'pointer',
+                }}>
+                  {setsunaposts.title}
+                </Typography>
+              </Link>
+              
+              <Typography variant="subtitle2" component="div" sx={{
+                color: 'common.black',
+                textAlign: 'right',
+              }}>
+                <Moment format="YYYY/MM/DD">
+                  {setsunaposts.publishedAt}
+                </Moment>
+              </Typography>
 
-              <div>
-                {setsunaposts.categories.categories}
-              </div>
               
             </CardContent>
           </CardActionArea>
         </Card>
-      </Link>
+      
       </Box>
       ))}
     </Box>
+  )
+}
+
+
+const Index = ( ) => {
+  return (
+  <>
+  <Header />
+  <Layout index>
+
+    {/* <GetArticles /> */}
 
     <SectionTitle
       sectiontitle={'高速でセキュアなウェブサイトをつくります'}

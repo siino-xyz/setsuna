@@ -1,4 +1,4 @@
-export default function Custom404() {
+const Custom404 = () => {
   return (
     <>
     <main className="main">
@@ -7,3 +7,6 @@ export default function Custom404() {
     </>
   );
 }
+
+export default Custom404()
+
