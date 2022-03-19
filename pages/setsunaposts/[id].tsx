@@ -2,10 +2,7 @@ import Moment from 'react-moment'
 import { Setsunaposts } from '../../types/setsunaposts'
 import { client } from '../../libs/client'
 import Layout from '../../components/Layout'
-
-
-// import Image from 'next/image'
-import Header from '../../components/Header'
+import BlogHeader from '../../components/BlogHeader'
 
 type Props = {
   setsunaposts: Setsunaposts
@@ -14,9 +11,7 @@ type Props = {
 const Setsunaposts =({ setsunaposts }: Props) => {
   return (
     <>
-      console.log(index)
-
-    <Header />
+    <BlogHeader />
     <Layout index>
         <div>
           <div>

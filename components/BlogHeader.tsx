@@ -18,7 +18,7 @@ const Item = (props: BoxProps) => {
   )
 }
 
-const Header = () => {
+const BlogHeader = () => {
   return (
         <Box sx={{ 
           flexGrow: 1,      
@@ -31,7 +31,7 @@ const Header = () => {
               flexDirection: 'row',
               justifyContent: 'space-between'
             }}>
-            <Image src="/logo/setsuna-logo-typo.svg" width={192} height={63} alt='setsuna-logo'/>
+            <Image src="/logo/setsuna-logo-blog.svg" width={192} height={63} alt='setsuna-logo'/>
             <Box
                 sx={{
                   display: 'flex',
@@ -58,8 +58,7 @@ const Header = () => {
 }
 
 
-Header.defaultProps = { description: "説明はありません" };
-export default Header
+export default BlogHeader
 
 
 
