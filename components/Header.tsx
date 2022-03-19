@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Box, { BoxProps } from '@mui/material/Box';
 
+
 const Item = (props: BoxProps) => {
   const { sx, ...other} = props;
   return (
@@ -24,7 +25,8 @@ const Header = () => {
           flexGrow: 1,      
         }}>
           <AppBar position="static" sx={{ 
-            backgroundColor: 'background.default'
+            backgroundColor: 'background.default',
+            boxShadow: 'none',
           }}>
             <Box sx= {{
               display: 'flex',
@@ -52,8 +54,7 @@ const Header = () => {
               </Box>
             </Box>
           </AppBar>
-        </Box>
-     
+        </Box>   
   )
 }
 

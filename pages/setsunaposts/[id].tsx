@@ -3,6 +3,7 @@ import { Setsunaposts } from '../../types/setsunaposts'
 import { client } from '../../libs/client'
 import Layout from '../../components/Layout'
 import BlogHeader from '../../components/BlogHeader'
+import Footer from '../../components/Footer'
 
 type Props = {
   setsunaposts: Setsunaposts
@@ -15,12 +16,12 @@ const Setsunaposts =({ setsunaposts }: Props) => {
     <Layout index>
         <div>
           <div>
-            {/* <Image 
-              image={setsunaposts.eye_catch.url}
+            <img 
+              src={setsunaposts.eye_catch.url}
               width={900}
               height={300}
               alt="eye_catch"
-            /> */}
+            />
             <div>
               {setsunaposts.title}
             </div>
@@ -38,6 +39,7 @@ const Setsunaposts =({ setsunaposts }: Props) => {
           </div>
         </div>
       </Layout>
+      <Footer />
     </>
   )
 }
